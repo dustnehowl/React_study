@@ -1,4 +1,6 @@
-# 220625 React 공식문서 Tutorial
+# <strong>공식문서 Tutorial</strong>
+
+# 220625 React 
 
 실습위주로 익숙해지기
 
@@ -124,3 +126,7 @@ onClick event시에 setState를 호출하여 자식 component의 값을 자동�
 
 ### 결과 및 full code
 <a href="https://codepen.io/gaearon/pen/VbbVLg?editors=0010"><strong>전체코드</strong></a>
+
+
+# 220630
+
