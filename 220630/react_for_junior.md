@@ -47,3 +47,95 @@
 강의 초반 부 코드
 
 <strong><a href="https://codesandbox.io/s/4r6lqrlvj9">실습 사이트</a></strong>
+
+## 6. JSX 기본 문법 알아보기 1
+
+
+
+
+## 7. JSX 기본 문법 알아보기 2
+
+주석처리
+class -> className
+
+
+
+## 8. Props
+
+props : 부모가 자식에게 값을 전달할 때 사용
+함수형 컴포넌트 => 더이상 component를 불러오지 않아도 된다. 
+    -state, lifecycle이 없다.
+    -불필요한 기능이 없어 메모리 자원도 덜 사용한다.
+    -마운트 속도가 조금 더 빠르다.
+
+defualtProps
+
+
+## 9. State
+
+자기 자신이 들고 있다.
+
+값을 변경할 때는 언제나 setState를 통해 값을 설정해준다. 
+(reRendering을 위해!!)
+
+handleIncrease, handleDecrease 를 화살표 함수로 작성한 이유 : 일반함수로 하면 this가 뭔지 몰라서 에러가 뜬다.
+
+    생성자에 super(props)를 선언하므로써 해결할 수 있다.
+
+
+## 10. LifeCycle API 1(생명주기)
+
+생성, 파괴 뭐 이런 중간중간에서 무슨 작업을 하고 싶을 때 알아두면 좋다.
+
+mounting : component가 브라우저 상에 나타날때
+
+    - constructor : 만들어질 때 가징 먼저 실행되는 함수
+    - getderivedStateFromProps : props로 받은 것을 state에 동기화 하고 싶을 때 사용하는 함수
+
+updating : props가 변경될 때
+
+    - shouldComponentUpdate : 컴포넌트가 업데이트되는 성능을 최적화 하고 싶을 때 사용
+        - virtualDom 에도 업데이트를 할지 말지를 결정
+    - componentDidUpdate : 컴포넌트가 업데이트 된 후 호출되는 함수
+unmounting : 사라질 때
+
+    - componentWillUnmount : 컴포넌트가 사라지는 과정에서 호출되는 함수, 클릭이벤트 등을 리슨하게 해놨다면 없애주는 작업을 여기서 하면된다.
+
+
+## 11. LifrCycle API 2
+
+constuctor : 생성자
+
+componentDidMount : 외부 라이브러리 연동, 컴포넌트에서 필요한 데이터 요청, 
+
+getDerivedStateFromProps : static으로 가져와 줘야한다. 동기화 하고 싶을 때 사용
+
+shouldComponentUpdate : 업데이트를 막아주는 기능을 할 수 있는 함수 next와 현재를 비교해서 조건을 넣으면 업데이트를 막는다.(render을 막는다.)
+
+getSnapshotBeforeUpdate : 업데이트 되기 전의 스크롤의 정보를 가져와 현재 보고있던 것을 유지하게 해준다.
+
+componentDidUpdate : 이전과 비교해서 특정 props가 바뀌면 어떠한 작업을 해줄 수 있다.
+
+componentWillUnmount : 컴포넌트가 제거될 때 호출
+
+componentDidCatch : 에러가 발생했을때 try catch 느낌?? 부모 컴포넌트에서 구현해주어야 한다.
+
+    - error : 에러가 무엇인지
+    - info : 어디서 발생했는지
+
+
+## 필요한 도구 설치하기
+
+### 작업환경 직접 설정하기
+
+node.js 설치하기
+
+yarn 설치하기
+
+## Create React App 사용하기
+
+```
+create-react-app 이름
+cd 이름
+npm start  //개발 서버 실행
+```
